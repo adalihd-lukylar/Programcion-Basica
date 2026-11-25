@@ -5,10 +5,8 @@
 #include <cmath>
 using namespace std;
 
-// =====================================================
+
 // VARIABLES GLOBALES: INVENTARIO DE CADA PRODUCTO
-// No se utilizan arreglos ni estructuras.
-// =====================================================
 
 int stock1 = 40, stock2 = 30, stock3 = 20;
 int stock4 = 18, stock5 = 15, stock6 = 10;
@@ -32,9 +30,7 @@ int numeroVentas = 0;
 const double TASA_ISV = 0.15;
 const double DOLAR = 26.42;
 
-// =====================================================
 // FUNCIONES DE ENTRADA
-// =====================================================
 
 int leerEntero(string mensaje) {
     int numero;
@@ -75,9 +71,8 @@ string leerTexto(string mensaje) {
     return texto;
 }
 
-// =====================================================
+
 // CATALOGO
-// =====================================================
 
 void mostrarProductos() {
     cout << "\n========== CATALOGO PUMA MEGAPACA ==========\n";
@@ -97,9 +92,7 @@ void mostrarProductos() {
     cout << "0       Terminar compra\n";
 }
 
-// =====================================================
 // TIPO DE CLIENTE Y DESCUENTOS
-// =====================================================
 
 int seleccionarCliente() {
     int tipo;
@@ -121,6 +114,7 @@ int seleccionarCliente() {
 
 // Devuelve la tasa de descuento por tipo de cliente.
 // categoria: 1 Casual, 2 Oficina, 3 Calzado, 4 Accesorios.
+
 double descuentoCliente(int tipo, int categoria) {
     double descuento = 0;
 
@@ -144,17 +138,15 @@ double descuentoCliente(int tipo, int categoria) {
 double calcularDescuento(double subtotal, double tasaCliente,
                          double tasaGenero, double tasaEdad,
                          double tasaPromocion, double tasaVolumen) {
-    double tasaTotal = tasaCliente + tasaGenero + tasaEdad
-                     + tasaPromocion + tasaVolumen;
+  double tasaTotal = tasaCliente + tasaGenero + tasaEdad + tasaPromocion + tasaVolumen;
 
     if (tasaTotal > 1.0) tasaTotal = 1.0;
 
     return subtotal * tasaTotal;
 }
 
-// =====================================================
+ 
 // FUNCION PARA MOSTRAR UNA LINEA DE FACTURA
-// =====================================================
 
 void mostrarLinea(string nombre, int cantidad, double subtotal,
                   double descuento) {
@@ -166,9 +158,8 @@ void mostrarLinea(string nombre, int cantidad, double subtotal,
     }
 }
 
-// =====================================================
+
 // METODO DE PAGO
-// =====================================================
 
 void procesarPago(double total) {
     int opcion;
@@ -226,10 +217,9 @@ void procesarPago(double total) {
         }
     }
 }
-
-// =====================================================
 // PROCESAR UNA COMPRA
-// =====================================================
+
+
 
 void procesarCompra() {
     int tipo, genero, edad;
